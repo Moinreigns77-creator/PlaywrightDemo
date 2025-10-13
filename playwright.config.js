@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import { start } from 'repl';
 
 /**
  * Read environment variables from file.
@@ -26,7 +27,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'],['allure-playwright']],
+  reporter: [['html'], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -34,19 +35,32 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    screenshot:'only-on-failure',
-    video:'retain-on-failure'
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+    // viewport: null,  // disable fixed viewport
+    // launchOptions: {
+    //   args: ['--start-maximized'], // maximize browser
+    //   slowMo: 100, // optional (for demo)
+    // },
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] , viewport:{width:1536,height:864},
-        // screenshot:'on',
-        // video:'on',
-        // trace:'on',
-        headless:true},
+      use: {
+        // ...devices['Desktop Chrome'] , 
+        // viewport:{width:1536,height:864},
+        screenshot:'on',
+        video:'on',
+        trace:'on',
+        headless: false,
+        viewport: null,  // disable fixed viewport
+        launchOptions: {
+          args: ['--start-maximized'], // maximize browser
+          // slowMo: 5000, // optional (for demo)
+        },
+      }
     },
 
     // {

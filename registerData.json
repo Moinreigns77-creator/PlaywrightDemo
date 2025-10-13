@@ -1,8 +1,8 @@
 [
     {
     "id":1,  
-    "name":"moin1",  
-    "email":"moin1@gmail.com",
+    "name":"moin4",  
+    "email":"moin4@gmail.com",
     "password":"moin@123",
     "interests":["Cypress","AWS"],
     "gender":"Male",
@@ -12,8 +12,8 @@
 
    {
     "id":2,  
-    "name":"moin2",  
-    "email":"moin2@gmail.com",
+    "name":"moin5",  
+    "email":"moin5@gmail.com",
     "password":"moin@123",
     "interests":["test Category 27","test Category 23"],
     "gender":"Male",
@@ -23,8 +23,8 @@
 
    {
     "id":3,  
-    "name":"moin3",  
-    "email":"moin3@gmail.com",
+    "name":"moin6",  
+    "email":"moin6@gmail.com",
     "password":"moin@123",
     "interests":["WDIO","test Category 13"],
     "gender":"Male",
